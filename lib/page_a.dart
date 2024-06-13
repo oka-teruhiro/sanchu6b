@@ -29,7 +29,7 @@ class _PageAState extends State<PageA> {
         backgroundColor: Colors.black,
         appBar: AppBar(
           backgroundColor: Colors.white24,
-          title: const Text('天運三柱推命 ver.5.1.9',
+          title: const Text('天運三柱推命 ver.6.1.0',
               style: TextStyle(
                 color: Colors.pinkAccent,
                 fontWeight: FontWeight.bold,
