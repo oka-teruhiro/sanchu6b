@@ -8,19 +8,34 @@ import 'main.dart';
 import 'page_b.dart'; // `PageB` のインポートを追加
 
 class PageA extends StatefulWidget {
-  const PageA({super.key});
+  final int counter;                 // 6.1.0 カウンター値を受け取る
+  final Function(int) updateCounter; // 6.1.1 カウンター値を更新する関数を受け取る
+
+  const PageA({
+    super.key,
+    required this.counter,
+    required this.updateCounter,    // 6.1.1 カウンター値を更新する関数を受け取る
+  });
 
   @override
   State<PageA> createState() => _PageAState();
 }
 
 class _PageAState extends State<PageA> {
-  int _counter = 0;
+  //int _counter = 0;
+  late int _counter;           // 6.1.1
+
+  @override                    // 6.1.1
+  void initState() {           // 6.1.1
+    super.initState();         // 6.1.1
+    _counter = widget.counter; // 6.1.1
+  }                            // 6.1.1
 
   void _incrementCounter() {
     setState(() {
       _counter++;
     });
+    widget.updateCounter(_counter);  // 6.1.1 カウンター値を更新
   }
 
   @override

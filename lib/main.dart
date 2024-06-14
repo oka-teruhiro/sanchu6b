@@ -44,16 +44,14 @@ class MyHomePage extends StatefulWidget {
 
 class MyHomePageState extends State<MyHomePage> {
   late int _currentIndex;
-  late int _counter; //カウンター値を保持する
+  late int _counter;                // 6.1.0 カウンター値を保持する
 
   @override
   void initState() {
     super.initState();
     _currentIndex = widget.currentIndex;
-    _counter = widget.counter ?? 0; // カウンター値を初期化
+    _counter = widget.counter ?? 0; // 6.1.0 カウンター値を初期化
   }
-
-
 
   void onTabTapped(int index) {
     setState(() {
@@ -61,18 +59,18 @@ class MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  //void _updateCounter(int value) {
-  //  setState(() {
-   //   _counter = value; // カウンター値を更新
-  //  });
-  //}
+  void _updateCounter(int value) { // 6.1.1 カウンター値を更新するメソッド
+    setState(() {                  // 6.1.1 カウンター値を更新するメソッド
+      _counter = value;            // 6.1.1 カウンター値を更新するメソッド
+    });                            // 6.1.1 カウンター値を更新するメソッド
+  }                                // 6.1.1 カウンター値を更新するメソッド
 
   @override
   Widget build(BuildContext context) {
-    // `_children` を更新して `PageB` にカウンターを渡す
+    // 6.1.0 `_children` を更新して `PageB` にカウンターを渡す
     final List<Widget> _children = [
-      const PageA(),
-      //PageA(counter: _counter, updateCounter: _updateCounter), // 'PageA' にカウンターの値と更新関数を渡す
+      //const PageA(),
+      PageA(counter: _counter, updateCounter: _updateCounter), // 6.1.1 'PageA' にカウンターの値と更新関数を渡す
       PageB(counter: _counter), // カウンター値を `PageB` に渡す
       const PageC(),
       const PageD(),
