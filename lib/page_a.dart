@@ -1,11 +1,5 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
 import 'main.dart';
-import 'page_b.dart'; // `PageB` のインポートを追加
 
 class PageA extends StatefulWidget {
   final int counter;                 // 6.1.0 カウンター値を受け取る
@@ -22,7 +16,6 @@ class PageA extends StatefulWidget {
 }
 
 class _PageAState extends State<PageA> {
-  //int _counter = 0;
   late int _counter;           // 6.1.1
 
   @override                    // 6.1.1
@@ -83,7 +76,6 @@ class _PageAState extends State<PageA> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
-      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

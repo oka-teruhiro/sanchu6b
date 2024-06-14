@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'page_a.dart';
 import 'page_b.dart';
 import 'page_c.dart';
@@ -20,9 +19,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: '天運三柱推命',
       theme: ThemeData.dark(
-          //primarySwatch: Colors.blue,
           ),
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
@@ -68,8 +66,7 @@ class MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     // 6.1.0 `_children` を更新して `PageB` にカウンターを渡す
-    final List<Widget> _children = [
-      //const PageA(),
+    final List<Widget> children = [
       PageA(counter: _counter, updateCounter: _updateCounter), // 6.1.1 'PageA' にカウンターの値と更新関数を渡す
       PageB(counter: _counter), // カウンター値を `PageB` に渡す
       const PageC(),
@@ -79,7 +76,7 @@ class MyHomePageState extends State<MyHomePage> {
       const PageG(),
     ];
     return Scaffold(
-      body: _children[_currentIndex],
+      body: children[_currentIndex],
       bottomNavigationBar: _currentIndex == 0
           ? null
           : BottomNavigationBar(

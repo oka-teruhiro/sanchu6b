@@ -1,13 +1,9 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
-//import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart';
-import 'page_b_model.dart';
 
 class PageB extends StatelessWidget {
   final int counter; // カウンター値を受け取るプロパティを追加
 
-  PageB({ // コンストラクタから `const` 修飾子を削除
+  const PageB({ // コンストラクタから `const` 修飾子を削除
     super.key,
     required this.counter, // 必須のプロパティとして追加
   });
